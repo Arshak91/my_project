@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% set arr = newses.articles %}
+
+{% block body %}
+    <main class="container">
+        <h1 class="text-center">{{ arr[0].source.name }}</h1>
+        <div class="row">
+            {% for item in arr %}
+                <div class="col-md-3 border card">
+                    <img class="card-img-top" src="{{ item.urlToImage }}" alt="">
+                    <div class="card-body">
+                        <h5>
+                            {{ item.title }}
+                        </h5>
+                        <p class="card-text">{{ item.author }}</p>
+                        <a target="_blank" href="{{ item.url }}" class="btn btn-primary">LINK</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}
+{% block javascripts %}{% endblock %}
+

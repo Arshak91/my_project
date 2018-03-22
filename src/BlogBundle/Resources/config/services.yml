@@ -1,0 +1,7 @@
+services:
+    blog.api:
+        class: BlogBundle\ApiClient\ApiClient
+        arguments: ["@service_container"]
+    blog.api.test:
+        class: BlogBundle\ApiClient\ApiClientTest
+        arguments: ["@blog.api","@service_container"]
